@@ -12,12 +12,12 @@
                         @csrf
                     <div class="form-group">
                         <label>NIS</label>
-                        <input type="number" class="form-control" name="nis">
+                        <input type="number" class="form-control" name="nis" required>
                     </div>
 
                     <div class="form-group">
                         <label>Nama</label>
-                        <input type="text" class="form-control" name="nama">
+                        <input type="text" class="form-control" name="nama" required>
                     </div>
 
                     <div class="form-group">
@@ -32,6 +32,11 @@
                             <option value="XI RPL 2">XI RPL 2</option>
                             <option value="XI RPL 3">XI RPL 3</option>
                         </select>
+
+                    <div class="form-group">
+                        <label>Cover</label>
+                        <input type="file" class="form-control" name="cover" required>
+                    </div>
 
                     </div>
                     <button type="submit" class="btn btn-primary">Daftar</button>

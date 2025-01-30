@@ -1,10 +1,23 @@
 <?php
 
+use App\Http\Controllers\BukusController;
+use App\Http\Controllers\penggunasController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ppdbsController;
 use App\Http\Controllers\siswasController;
+use App\Http\Controllers\TeleponsController;
+use App\Http\Controllers\KategorisController;
+use App\Http\Controllers\ProduksController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\CustomersController;
+use App\Http\Controllers\GenresController;
+use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\PembelisController;
+use App\Http\Controllers\PenerbitsController;
+use App\Http\Controllers\TransaksisController;
 use App\Models\barang;
+use App\Models\Telepon;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -155,3 +168,39 @@ Route::resource('siswa',siswasController::class);
 
 //CRUD PPDB
 Route::resource('ppdb',ppdbsController::class);
+
+//CRUD PENGGUNA
+Route::resource('pengguna',penggunasController::class);
+
+//CRUD TELEPON
+Route::resource('telepon',TeleponsController::class);
+
+//CRUD KATEGORI
+Route::resource('kategori',KategorisController::class);
+
+//CRUD PRODUK
+Route::resource('produk',ProduksController::class);
+
+//CRUD PRODUCT
+Route::resource('product',ProductsController::class);
+
+//CRUD PRODUCT
+Route::resource('customer',CustomersController::class);
+
+//CRUD ORDER
+Route::resource('order',OrdersController::class);
+
+//CRUD PENERBIT
+Route::resource('penerbit',PenerbitsController::class);
+
+//CRUD GENRE
+Route::resource('genre',GenresController::class);
+
+//CRUD BUKU
+Route::resource('buku',BukusController::class);
+
+//CRUD PEMBELI
+Route::resource('pembeli',PembelisController::class);
+
+//CRUD TRANSAKSI
+Route::resource('transaksi',TransaksisController::class);

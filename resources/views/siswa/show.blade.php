@@ -34,6 +34,11 @@
                             <option value="XI RPL 3">XI RPL 3</option>
                         </select>
 
+                        <label for="">Cover</label><br>
+                    <td>
+                        <img src="{{ asset('/images/siswa/' . $siswa->cover) }}" width="100">
+                    </td>  
+                    
                     </div>
                     <a href="{{ route('siswa.index') }}" class="btn btn-primary">Back</a>
                     </form>

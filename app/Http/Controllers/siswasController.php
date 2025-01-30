@@ -14,10 +14,10 @@ class siswasController extends Controller
      */
 
      //Untuk Memindahkan ke halaman login dulu 
-     public function __construct()
-     {
-        $this->middleware('auth');
-     }
+    //  public function __construct()
+    //  {
+    //     $this->middleware('auth');
+    //  }
 
 
      // 
@@ -50,6 +50,14 @@ class siswasController extends Controller
         $siswa->nama    = $request->nama;
         $siswa->jk      = $request->jk;
         $siswa->kelas   = $request->kelas;
+
+        if ($request->hasFile('cover')) {
+            $img = $request->file('cover');
+            $name = rand(1000,9999) . $img->getClientOriginalName();
+            $img->move('images/siswa', $name);
+            $siswa->cover = $name;
+        }
+
         $siswa->save();
 
         return redirect()->route('siswa.index')->with('success','Data Berhasil Ditambahkan');
@@ -95,6 +103,15 @@ class siswasController extends Controller
         $siswa->nama    = $request->nama;
         $siswa->jk      = $request->jk;
         $siswa->kelas   = $request->kelas;
+
+        if ($request->hasFile('cover')) {
+            $siswa->deleteImage();
+            $img = $request->file('cover');
+            $name = rand(1000,9999) . $img->getClientOriginalName();
+            $img->move('images/siswa', $name);
+            $siswa->cover = $name;
+        }
+
         $siswa->save();
 
         return redirect()->route('siswa.index')->with('success','Data Berhasil Diperbarui');

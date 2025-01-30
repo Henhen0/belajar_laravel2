@@ -14,10 +14,10 @@ class ppdbsController extends Controller
      */
 
      //Untuk Memindahkan ke halaman login dulu 
-     public function __construct()
-     {
-        $this->middleware('auth');
-     }
+    //  public function __construct()
+    //  {
+    //     $this->middleware('auth');
+    //  }
      
     public function index()
     {
