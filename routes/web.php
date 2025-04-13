@@ -68,6 +68,14 @@ route::get('/tes/{nama2}/{tmptlahir2}/{jk2}/{agama2}/{alamat2}', function($nama,
 
 
 
+//route hitung
+route::get('hitung/{bilangan1}/{bilangan2}', function ($a,$b){
+    return "Bilangan 1 :". $a . "<br>".
+           "Bilangan 2 :". $b ."<br>".
+           "Hasil :". $a+$b;
+});
+
+
 //route latihan
 route::get('/latihan/{nama}/{tel}/{jb}/{nb}/{jumlah}/{pembayaran}', function($nmpembeli,$tel,$jb,$nb,$jumlah,$pembayaran){
    
